@@ -143,8 +143,6 @@
 .container {
   &.isCollapsed {
     .collapseMenuItem {
-      display: none;
-
       img {
         transform: rotate(180deg);
       }
