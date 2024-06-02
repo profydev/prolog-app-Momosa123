@@ -42,6 +42,16 @@ describe("Sidebar Navigation", () => {
       // check that text is not rendered
       cy.get("nav").contains("Issues").should("not.exist");
     });
+    it("opens the user’s mail app by clicking support button", () => {
+      // Get the button and simulate a click
+      cy.get("li")
+        .contains("Support")
+        .should("have.attr", "href")
+        .and(
+          "include",
+          "mailto:support@prolog-app.com?subject=Support Request: ",
+        );
+    });
   });
 
   context("mobile resolution", () => {
