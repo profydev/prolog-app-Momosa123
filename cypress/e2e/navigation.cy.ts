@@ -36,11 +36,21 @@ describe("Sidebar Navigation", () => {
       cy.get("nav").contains("Collapse").click();
 
       // check that links still exist and are functionable
-      cy.get("nav").find("a").should("have.length", 5).eq(1).click();
+      cy.get("nav").find("a").should("have.length", 6).eq(1).click();
       cy.url().should("eq", "http://localhost:3000/dashboard/issues");
 
       // check that text is not rendered
       cy.get("nav").contains("Issues").should("not.exist");
+    });
+    it("opens the user’s mail app by clicking support button", () => {
+      // Get the button and simulate a click
+      cy.get("li")
+        .contains("Support")
+        .should("have.attr", "href")
+        .and(
+          "include",
+          "mailto:support@prolog-app.com?subject=Support Request: ",
+        );
     });
   });
 
@@ -80,7 +90,7 @@ describe("Sidebar Navigation", () => {
       isInViewport("nav");
 
       // check that all links are rendered
-      cy.get("nav").find("a").should("have.length", 5);
+      cy.get("nav").find("a").should("have.length", 6);
 
       // Support button should be rendered but Collapse button not
       cy.get("nav").contains("Support").should("exist");
