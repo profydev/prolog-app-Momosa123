@@ -14,7 +14,11 @@ describe("Project List", () => {
     // wait for request to resolve
     cy.wait("@getProjects");
   });
-
+  const statusMap = {
+    error: "critical",
+    warning: "warning",
+    info: "stable",
+  };
   context("desktop resolution", () => {
     beforeEach(() => {
       cy.viewport(1025, 900);
@@ -32,7 +36,11 @@ describe("Project List", () => {
           cy.wrap($el).contains(languageNames[index]);
           cy.wrap($el).contains(mockProjects[index].numIssues);
           cy.wrap($el).contains(mockProjects[index].numEvents24h);
-          cy.wrap($el).contains(capitalize(mockProjects[index].status));
+          cy.wrap($el).contains(
+            capitalize(
+              statusMap[mockProjects[index].status as keyof typeof statusMap],
+            ),
+          );
           cy.wrap($el)
             .find("a")
             .should("have.attr", "href", "/dashboard/issues");
