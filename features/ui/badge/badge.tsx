@@ -16,6 +16,11 @@ export enum BadgeColor {
   success = "success",
 }
 
+export enum BadgeStatus {
+  error = "critical",
+  warning = "warning",
+  info = "stable",
+}
 type BadgeProps = {
   children: React.ReactNode;
   size?: BadgeSize;
