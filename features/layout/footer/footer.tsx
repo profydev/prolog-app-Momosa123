@@ -2,12 +2,10 @@ import styles from "./footer.module.scss";
 import pjson from "../../../package.json";
 import classNames from "classnames";
 import Link from "next/link";
-type Props = {
-  footerClassName?: string;
-};
-export function Footer({ footerClassName }: Props) {
+
+export function Footer() {
   return (
-    <footer className={classNames(styles.footer, footerClassName)}>
+    <footer className={classNames(styles.footer)}>
       <ul className={styles.linkContainer}>
         <li>
           <Link href="#">Docs</Link>

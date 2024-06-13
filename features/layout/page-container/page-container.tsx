@@ -20,15 +20,15 @@ export function PageContainer({ children, title, info }: PageContainerProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SidebarNavigation />
+      <SidebarNavigation sidebarClassName={styles.sidebar} />
       <main className={styles.main}>
         <div className={styles.contentContainer}>
           <h1 className={styles.title}>{title}</h1>
           <div className={styles.info}>{info}</div>
           {children}
         </div>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }
