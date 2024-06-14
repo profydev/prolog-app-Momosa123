@@ -6,13 +6,11 @@ describe("Project List", () => {
     // setup request mock
     cy.intercept("GET", "https://prolog-api.profy.dev/project", {
       fixture: "projects.json",
+      delay: 2000,
     }).as("getProjects");
 
     // open projects page
     cy.visit("http://localhost:3000/dashboard");
-
-    // wait for request to resolve
-    cy.wait("@getProjects");
   });
   const statusMap = {
     error: "critical",
@@ -23,8 +21,15 @@ describe("Project List", () => {
     beforeEach(() => {
       cy.viewport(1025, 900);
     });
+    it("shows loading screen while fetching data", () => {
+      cy.get('[data-cy="loading-indicator"]').should("be.visible");
+      // wait for request to resolve
+      cy.wait("@getProjects");
+      cy.get('[data-cy="loading-indicator"]').should("not.exist");
+    });
 
     it("renders the projects", () => {
+      cy.wait("@getProjects");
       const languageNames = ["React", "Node.js", "Python"];
 
       // get all project cards
