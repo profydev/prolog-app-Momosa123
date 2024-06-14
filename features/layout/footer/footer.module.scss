@@ -2,37 +2,51 @@
 @use "@styles/space";
 @use "@styles/misc";
 @use "@styles/breakpoint";
+@use "@styles/font";
 
 .footer {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: space.$s6;
   align-items: center;
-  justify-content: space-between;
-
-  @media (min-width: breakpoint.$desktop) {
-    flex-direction: row;
-  }
-
-  padding: 13.5px space.$s8;
+  padding: space.$s6 space.$s4;
   background: color.$gray-50;
-  height: misc.$mobile-footer-height;
 
   @media (min-width: breakpoint.$desktop) {
     height: misc.$desktop-footer-height;
+    flex-direction: row;
+
+    .version {
+      order: -1;
+    }
   }
 }
 
 .linkContainer {
   display: flex;
   gap: space.$s6;
+  margin: 0;
+  padding: 0;
 
-  a {
-    color: color.$gray-500;
-    text-decoration: none;
+  li {
+    list-style-type: none;
+
+    a {
+      text-decoration: none;
+      color: color.$gray-500;
+      font: font.$text-md-medium;
+    }
   }
 }
 
 .version {
+  flex: 1;
   color: color.$gray-400;
+}
+
+.logoContainer {
+  flex: 1;
+  display: flex;
+  justify-content: end;
 }
