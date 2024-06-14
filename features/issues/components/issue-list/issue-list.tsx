@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { ProjectLanguage } from "@api/projects.types";
 import { useGetProjects } from "@features/projects";
 import { useGetIssues } from "../../api/use-get-issues";
+import { LoadingScreen } from "@features/ui";
 import { IssueRow } from "./issue-row";
 import styles from "./issue-list.module.scss";
 
@@ -19,7 +20,7 @@ export function IssueList() {
   const projects = useGetProjects();
 
   if (projects.isLoading || issuesPage.isLoading) {
-    return <div>Loading</div>;
+    return <LoadingScreen />;
   }
 
   if (projects.isError) {
