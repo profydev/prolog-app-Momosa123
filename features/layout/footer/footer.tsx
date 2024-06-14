@@ -25,7 +25,7 @@ export function Footer() {
         <img src="/icons/logo-small.svg" alt="logo" />
       </div>
       <div className={styles.version}>
-        <p>version: {pjson.version}</p>
+        <p>Version: {pjson.version}</p>
       </div>
     </footer>
   );
