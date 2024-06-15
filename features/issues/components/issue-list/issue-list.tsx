@@ -43,7 +43,7 @@ export function IssueList() {
   const { items, meta } = issuesPage.data || {};
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-cy="issue-list">
       <table className={styles.table}>
         <thead>
           <tr className={styles.headerRow}>
