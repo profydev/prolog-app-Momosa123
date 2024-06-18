@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { ProjectLanguage } from "@api/projects.types";
 import { useGetProjects } from "@features/projects";
 import { useGetIssues } from "../../api/use-get-issues";
-import { LoadingScreen } from "@features/ui";
+import { LoadingScreen, FetchError } from "@features/ui";
 import { IssueRow } from "./issue-row";
 import styles from "./issue-list.module.scss";
 
@@ -25,12 +25,12 @@ export function IssueList() {
 
   if (projects.isError) {
     console.error(projects.error);
-    return <div>Error loading projects: {projects.error.message}</div>;
+    return <FetchError page="projects" refetch={projects.refetch} />;
   }
 
   if (issuesPage.isError) {
     console.error(issuesPage.error);
-    return <div>Error loading issues: {issuesPage.error.message}</div>;
+    return <FetchError page="issue" refetch={issuesPage.refetch} />;
   }
 
   const projectIdToLanguage = (projects.data || []).reduce(
