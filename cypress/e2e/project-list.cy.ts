@@ -17,6 +17,7 @@ describe("Project List", () => {
     info: "stable",
   };
   it("shows loading screen while fetching data then renders the project list", () => {
+    cy.wait(1000);
     cy.get('[data-cy="loading-indicator"]').should("be.visible");
     // wait for request to resolve
     cy.get('[data-cy="project-list"]').should("be.visible");
