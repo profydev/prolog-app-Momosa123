@@ -8,7 +8,7 @@ describe("Project List", () => {
       fixture: "projects.json",
     });
 
-    // open projects page
+    // open project page
     cy.visit("http://localhost:3000/dashboard");
   });
   const statusMap = {
