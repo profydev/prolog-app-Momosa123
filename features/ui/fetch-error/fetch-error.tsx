@@ -8,7 +8,7 @@ type Props = {
 };
 export function FetchError({ page, refetch }: Props) {
   return (
-    <div className={styles.messageContainer}>
+    <div data-cy="fetching-error" className={styles.messageContainer}>
       <div className={styles.textContainer}>
         <img src="/icons/alert-circle.svg" alt="" />
         <p>There was a problem while loading the {page} data</p>
