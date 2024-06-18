@@ -1,0 +1,33 @@
+@use "@styles/color";
+@use "@styles/space";
+@use "@styles/font";
+@use "@styles/breakpoint";
+
+.messageContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: color.$error-25;
+  border: 1px solid color.$error-300;
+  color: color.$error-700;
+  padding: space.$s4;
+  font: font.$text-sm-medium;
+}
+
+.textContainer {
+  display: flex;
+  gap: space.$s3;
+  width: 60%;
+}
+
+.retryButton {
+  display: flex;
+  padding: space.$s2;
+  color: color.$error-700;
+  background: none;
+  border: none;
+}
+
+.retryButton:hover {
+  cursor: pointer;
+}
