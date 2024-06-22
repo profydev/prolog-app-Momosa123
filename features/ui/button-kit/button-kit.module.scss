@@ -1,0 +1,172 @@
+@use "@styles/color";
+@use "@styles/font";
+@use "@styles/space";
+
+.button {
+  cursor: pointer;
+  display: flex;
+  gap: space.$s2;
+
+  /* remove default button styles */
+  border: 1px solid transparent;
+  margin: 0;
+  background: transparent;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  appearance: none;
+  font-family: font.$text-sm-medium;
+  border-radius: space.$s2;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+.primary {
+  color: color.$primary-25;
+  background-color: color.$primary-600;
+}
+
+.primary:hover {
+  background-color: color.$primary-700;
+}
+
+.primary:focus {
+  outline: 4px solid color.$primary-100;
+}
+
+.primary:disabled {
+  border: none;
+  background-color: color.$primary-200;
+}
+
+.secondary {
+  color: color.$primary-600;
+  background-color: color.$primary-50;
+}
+
+.secondary:hover {
+  background-color: color.$primary-100;
+}
+
+.secondary:focus {
+  outline: 4px solid color.$primary-100;
+}
+
+.secondary:disabled {
+  color: color.$primary-300;
+  border: none;
+  background-color: color.$primary-25;
+}
+
+.gray {
+  border-color: color.$gray-300;
+  background-color: transparent;
+  color: color.$gray-700;
+}
+
+.gray:hover {
+  background-color: color.$gray-50;
+}
+
+.gray:focus {
+  outline: 4px solid color.$gray-100;
+}
+
+.gray:disabled {
+  color: color.$gray-300;
+  border-color: color.$gray-200;
+  background-color: transparent;
+}
+
+.empty {
+  border: none;
+  color: color.$primary-700;
+}
+
+.empty:hover {
+  background-color: color.$primary-50;
+}
+
+.empty:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+.empty:disabled {
+  color: color.$gray-300;
+}
+
+.empty-gray {
+  border: none;
+  color: color.$gray-500;
+}
+
+.empty-gray:hover {
+  background-color: color.$gray-50;
+  color: color.$gray-600;
+}
+
+.empty-gray:focus {
+  color: color.$gray-500;
+  background-color: transparent;
+  outline: none;
+}
+
+.empty-gray:disabled {
+  color: color.$gray-300;
+}
+
+.error {
+  background-color: color.$error-600;
+  border: none;
+  color: color.$error-25;
+}
+
+.error:hover {
+  background-color: color.$error-700;
+}
+
+.error:focus {
+  background-color: color.$error-600;
+  outline: 4px solid color.$error-100;
+}
+
+.error:disabled {
+  background-color: color.$error-200;
+}
+
+.empty-error {
+  border: none;
+  color: color.$error-700;
+}
+
+.empty-error:hover {
+  background-color: color.$error-50;
+}
+
+.empty-error:focus {
+  background-color: transparent;
+}
+
+.empty-error:disabled {
+  color: color.$error-300;
+}
+
+.sm {
+  padding: 0.5rem 0.875rem;
+}
+
+.md {
+  padding: 0.625rem space.$s4;
+}
+
+.lg {
+  padding: 0.625rem 1.125rem;
+}
+
+.xlg {
+  padding: space.$s3 space.$s5;
+}
