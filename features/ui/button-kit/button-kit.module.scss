@@ -25,8 +25,9 @@
 }
 
 .primary {
-  color: color.$primary-25;
+  color: color.$white;
   background-color: color.$primary-600;
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
 }
 
 .primary:hover {
@@ -58,7 +59,7 @@
 .secondary:disabled {
   color: color.$primary-300;
   border: none;
-  background-color: color.$primary-25;
+  background-color: color.$white;
 }
 
 .gray {
@@ -122,7 +123,7 @@
 .error {
   background-color: color.$error-600;
   border: none;
-  color: color.$error-25;
+  color: color.$white;
 }
 
 .error:hover {
