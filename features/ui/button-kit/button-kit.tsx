@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import styles from "./button-kit.module.scss";
+import { ButtonHTMLAttributes } from "react";
+import { Button } from "../button/button";
 export enum ButtonSize {
   sm = "sm",
   md = "md",
@@ -20,16 +22,18 @@ export enum ButtonIcon {
   trailing = "trailing",
   only = "only",
 }
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: ButtonSize;
   color?: ButtonColor;
   icon?: ButtonIcon;
+  iconSource: string;
 };
 
 export function ButtonKit({
   size = ButtonSize.md,
   color = ButtonColor.primary,
   icon = ButtonIcon.leading,
+  iconSource,
 }: ButtonProps) {
   const iconStyle = {
     order: icon === "leading" ? 0 : 1,
@@ -38,10 +42,10 @@ export function ButtonKit({
     display: icon === "only" ? "none" : "inline",
   };
   return (
-    <button className={classNames(styles.button, styles[size], styles[color])}>
+    <Button className={classNames(styles.button, styles[size], styles[color])}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img style={iconStyle} src="./icons/circle-icon.svg" alt="" />
+      <img style={iconStyle} src={iconSource} alt="" />
       <span style={textStyle}>Button CTA</span>
-    </button>
+    </Button>
   );
 }
