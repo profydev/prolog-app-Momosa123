@@ -1,6 +1,7 @@
 @use "@styles/color";
 @use "@styles/font";
 @use "@styles/space";
+@use "@styles/shadow";
 
 .button {
   cursor: pointer;
@@ -9,151 +10,141 @@
 
   /* remove default button styles */
   border: 1px solid transparent;
-  margin: 0;
-  background: transparent;
-  line-height: normal;
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-  appearance: none;
   font-family: font.$text-sm-medium;
   border-radius: space.$s2;
-
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
+  box-shadow: shadow.$xs;
 }
 
 .primary {
   color: color.$white;
   background-color: color.$primary-600;
-  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
-}
+  box-shadow: shadow.$xs;
 
-.primary:hover {
-  background-color: color.$primary-700;
-}
+  &:hover {
+    background-color: color.$primary-700;
+  }
 
-.primary:focus {
-  outline: 4px solid color.$primary-100;
-}
+  &:focus {
+    outline: 4px solid color.$primary-100;
+  }
 
-.primary:disabled {
-  border: none;
-  background-color: color.$primary-200;
+  &:disabled {
+    border: none;
+    background-color: color.$primary-200;
+  }
 }
 
 .secondary {
   color: color.$primary-600;
   background-color: color.$primary-50;
-}
 
-.secondary:hover {
-  background-color: color.$primary-100;
-}
+  &:hover {
+    background-color: color.$primary-100;
+  }
 
-.secondary:focus {
-  outline: 4px solid color.$primary-100;
-}
+  &:focus {
+    outline: 4px solid color.$primary-100;
+  }
 
-.secondary:disabled {
-  color: color.$primary-300;
-  border: none;
-  background-color: color.$white;
+  &:disabled {
+    color: color.$primary-300;
+    border: none;
+    background-color: color.$white;
+  }
 }
 
 .gray {
   border-color: color.$gray-300;
   background-color: transparent;
   color: color.$gray-700;
-}
 
-.gray:hover {
-  background-color: color.$gray-50;
-}
+  &:hover {
+    background-color: color.$gray-50;
+  }
 
-.gray:focus {
-  outline: 4px solid color.$gray-100;
-}
+  &:focus {
+    outline: 4px solid color.$gray-100;
+  }
 
-.gray:disabled {
-  color: color.$gray-300;
-  border-color: color.$gray-200;
-  background-color: transparent;
+  &:disabled {
+    color: color.$gray-300;
+    border-color: color.$gray-200;
+    background-color: transparent;
+  }
 }
 
 .empty {
   border: none;
   color: color.$primary-700;
-}
 
-.empty:hover {
-  background-color: color.$primary-50;
-}
+  &:hover {
+    background-color: color.$primary-50;
+  }
 
-.empty:focus {
-  background-color: transparent;
-  outline: none;
-}
+  &:focus {
+    background-color: transparent;
+    outline: none;
+  }
 
-.empty:disabled {
-  color: color.$gray-300;
+  &:disabled {
+    color: color.$gray-300;
+  }
 }
 
 .empty-gray {
   border: none;
   color: color.$gray-500;
-}
 
-.empty-gray:hover {
-  background-color: color.$gray-50;
-  color: color.$gray-600;
-}
+  &:hover {
+    background-color: color.$gray-50;
+    color: color.$gray-600;
+  }
 
-.empty-gray:focus {
-  color: color.$gray-500;
-  background-color: transparent;
-  outline: none;
-}
+  &:focus {
+    color: color.$gray-500;
+    background-color: transparent;
+    outline: none;
+  }
 
-.empty-gray:disabled {
-  color: color.$gray-300;
+  &:disabled {
+    color: color.$gray-300;
+  }
 }
 
 .error {
   background-color: color.$error-600;
   border: none;
   color: color.$white;
-}
 
-.error:hover {
-  background-color: color.$error-700;
-}
+  &:hover {
+    background-color: color.$error-700;
+  }
 
-.error:focus {
-  background-color: color.$error-600;
-  outline: 4px solid color.$error-100;
-}
+  &:focus {
+    background-color: color.$error-600;
+    outline: 4px solid color.$error-100;
+  }
 
-.error:disabled {
-  background-color: color.$error-200;
+  &:disabled {
+    background-color: color.$error-200;
+  }
 }
 
 .empty-error {
   border: none;
   color: color.$error-700;
-}
 
-.empty-error:hover {
-  background-color: color.$error-50;
-}
+  &:hover {
+    background-color: color.$error-50;
+  }
 
-.empty-error:focus {
-  background-color: transparent;
-}
+  &:focus {
+    background-color: transparent;
+  }
 
-.empty-error:disabled {
-  color: color.$error-300;
+  &:disabled {
+    color: color.$error-300;
+  }
 }
 
 .sm {
